@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 " Bundle 'majutsushi/tagbar'
 " https://github.com/mozilla/doctorjs
+" SuperTab
 
 filetype plugin indent on     " required!
 "
@@ -49,6 +50,15 @@ nmap <silent> <F3> :NERDTreeTabsToggle<CR>
 "-----------------------------------
 " Other Settings 
 "-----------------------------------
+if has("gui_running") " GUI color and font settings
+  set guifont=Osaka-Mono:h20
+  set background=dark
+  set t_Co=256 " 256 color mode
+  set cursorline " highlight current line
+  colors moria
+  highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
+endif
+
 
 " set leader to ,
 let mapleader=","
@@ -62,7 +72,7 @@ filetype indent on  " Enable filetype-specific indenting
 syntax on           " syntax highlight
 
 " TAB setting
-set tabstop=2       " set tabs to 2-character width 
+set tabstop=4       " set tabs to 2-character width
 set softtabstop=2 
 set expandtab       " replace <TAB> with spaces
 set shiftwidth=2
@@ -89,17 +99,23 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 nmap <C-N><C-N> :set invnumber<CR>
 
 " cursor
+set ruler
 set cursorline
 highlight CursorLine   cterm=NONE ctermbg=17 ctermfg=NONE guibg=17 guifg=NONE
 
 " pop up
 highlight Pmenu ctermfg=16 ctermbg=DarkBlue guibg=Red
 
+" set mouse=a
+
 " move around tabs.
 " go to prev tab
 map <S-A> gT
 " go to next tab
-map <S-N> gt
+"map <S-N> gt
+
+" ,p toggles paste mode
+nmap <leader>p :set paste!<BAR>set paste?<CR>
 
 " Enable omni completion. (Ctrl-X Ctrl-O)
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
