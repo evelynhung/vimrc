@@ -18,15 +18,15 @@ Plugin 'gmarik/Vundle.vim'
 "
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'mileszs/ack.vim'
-" Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'jistr/vim-nerdtree-tabs'
 " Plugin 'majutsushi/tagbar'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'indent-motion'
-" Plugin 'YankRing.vim'
+Plugin 'YankRing.vim'
 
 
 " All of your Plugins must be added before the following line
