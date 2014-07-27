@@ -5,44 +5,52 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"       call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/indent-motion'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-" Bundle 'majutsushi/tagbar'
-" https://github.com/mozilla/doctorjs
-" SuperTab
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" Plugin 'mileszs/ack.vim'
+" Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'majutsushi/tagbar'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'indent-motion'
+" Plugin 'YankRing.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 filetype plugin indent on     " required!
+" To ignore plugin indent changes, instead use:
+"       filetype plugin on
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" Put your non-Plugin stuff after this line
 
 "-----------------------------------
-" Bundle Related Settings 
+" Plugin Related Settings 
 "-----------------------------------
 
 " vim-nerdtree-tabs
-nmap <silent> <F3> :NERDTreeTabsToggle<CR>
+" nmap <silent> <F3> :NERDTreeTabsToggle<CR>
 
 " toggle TagBar with F7
 "nmap <silent> <F7> :TagbarToggle<CR> 
@@ -72,7 +80,7 @@ filetype indent on  " Enable filetype-specific indenting
 syntax on           " syntax highlight
 
 " TAB setting
-set tabstop=8       " set tabs to 4-character width
+set tabstop=8       " set tabs to 8-character width
 set softtabstop=2 
 set expandtab       " replace <TAB> with spaces
 set shiftwidth=2
