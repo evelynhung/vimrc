@@ -72,7 +72,7 @@ filetype indent on  " Enable filetype-specific indenting
 syntax on           " syntax highlight
 
 " TAB setting
-set tabstop=4       " set tabs to 2-character width
+set tabstop=8       " set tabs to 4-character width
 set softtabstop=2 
 set expandtab       " replace <TAB> with spaces
 set shiftwidth=2
@@ -97,6 +97,13 @@ set cindent
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 nmap <C-N><C-N> :set invnumber<CR>
+
+" 80-column indication
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " cursor
 set ruler
